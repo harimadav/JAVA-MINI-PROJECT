@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Lending Kiosk</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>📚 Book Lending Kiosk</h1>
+    <p>Smart, Simple, and Efficient Library Management</p>
+  </header>
+
+  <main>
+    <!-- Available Books -->
+    <section class="book-list">
+      <h2>Available Books</h2>
+      <table id="bookTable">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Books will load dynamically -->
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Book Actions -->
+    <section class="actions">
+      <h2>Manage Books</h2>
+      <div class="form-container">
+        <input type="text" id="userName" placeholder="Enter your name" />
+        <input type="number" id="bookId" placeholder="Enter Book ID" />
+        <input type="number" id="days" placeholder="Enter Days (for borrow/renew)" />
+        <div class="btn-group">
+          <button class="borrow-btn" onclick="borrowBook()">Borrow</button>
+          <button class="return-btn" onclick="returnBook()">Return</button>
+          <button class="renew-btn" onclick="renewBook()">Renew</button>
+          <button class="view-btn" onclick="showBorrowed()">View Borrowed List</button>
+          <button class="view-btn" onclick="showRenewed()">View Renewed List</button>
+          <button class="view-btn" onclick="showReturned()">View Returned List</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Borrowed Books -->
+    <section class="borrowed-list" id="borrowedListSection" style="display: none;">
+      <h2>Borrowed Books</h2>
+      <table id="borrowedTable">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Book Title</th>
+            <th>User</th>
+            <th>Borrow Date</th>
+            <th>Return Date</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <!-- Renewed Books -->
+    <section class="borrowed-list" id="renewedListSection" style="display: none;">
+      <h2>Renewed Books</h2>
+      <table id="renewedTable">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Book Title</th>
+            <th>User</th>
+            <th>Renew Date</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <!-- Returned Books -->
+    <section class="borrowed-list" id="returnedListSection" style="display: none;">
+      <h2>Returned Books</h2>
+      <table id="returnedTable">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Book Title</th>
+            <th>User</th>
+            <th>Return Date</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Book Lending Kiosk | Powered by Java & MySQL</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
